@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-18fa4379-1bcf-4493-be5e-bd35009c24b5/styles.css" />
+<title>Temporary Works Supervisor — TWSTC</title>
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+deck-stage {
+  --type-display: 144px;
+  --type-title: 96px;
+  --type-subtitle: 40px;
+  --type-body: 34px;
+  --type-small: 28px;
+  --type-kicker: 24px;
+  --pad-x: 120px;
+  --page-foot-note: "Target Zero Group · TWSTC";
+  --pad-top: 96px;
+  --pad-bottom: 120px;
+  --baseline: 48px;
+}
+.slide {
+  display: flex; flex-direction: column;
+  isolation: isolate;
+  background: var(--color-bg); color: var(--color-text);
+  font-family: var(--font-body);
+  text-wrap: pretty;
+  padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+  print-color-adjust: exact; -webkit-print-color-adjust: exact;
+}
+.board {
+  --board-rule: color-mix(in srgb, var(--color-divider) 50%, transparent);
+  position: absolute; z-index: -1;
+  left: var(--pad-x); top: calc(2.5 * var(--baseline));
+  width: calc(1680px + 1px); height: calc(17.5 * var(--baseline) + 1px);
+  border: 1px solid var(--board-rule, var(--color-divider));
+  background-origin: border-box; background-clip: border-box;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(to bottom, var(--board-rule, var(--color-divider)) 0 1px, transparent 1px 120px),
+    repeating-linear-gradient(to bottom, transparent 0 96px, var(--board-rule, var(--color-divider)) 96px 97px, transparent 97px 120px),
+    repeating-linear-gradient(to right, var(--board-rule, var(--color-divider)) 0 1px, transparent 1px 432px),
+    repeating-linear-gradient(to right, transparent 0 384px, var(--board-rule, var(--color-divider)) 384px 385px, transparent 385px 432px);
+}
+.kicker {
+  position: absolute; top: calc(2 * var(--baseline) - 1cap);
+  left: var(--pad-x); text-box: trim-both cap alphabetic;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--type-kicker); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--color-accent);
+  font-feature-settings: "tnum" 1;
+}
+.k-right { left: auto; right: var(--pad-x); }
+.slide-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--type-title); line-height: calc(2 * var(--baseline)); letter-spacing: 0; margin: 0;
+  margin-left: -0.052em;
+  text-box: trim-both cap alphabetic;
+}
+.pin-bottom { position: absolute; left: var(--pad-x); right: var(--pad-x); bottom: calc(var(--pad-bottom) + var(--baseline) / 2); }
+.meta { display: flex; align-items: baseline; gap: 18px; font-size: var(--type-kicker); color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+.meta span { text-box: trim-both cap alphabetic; }
+deck-stage { counter-reset: page; }
+.slide { counter-increment: page; }
+.page-foot {
+  position: absolute; left: var(--pad-x); bottom: calc(var(--pad-bottom) + var(--baseline) / 2);
+  font-size: var(--type-kicker);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  text-box: trim-both cap alphabetic;
+}
+.page-foot::before { content: counter(page) " · "; font-feature-settings: "tnum" 1; }
+.page-foot::after { content: var(--page-foot-note); }
+deck-stage[data-no-page-furniture] .page-foot { display: none !important; }
+.divider .page-foot { color: color-mix(in srgb, var(--color-bg) 55%, transparent); }
+.cover { justify-content: flex-start; }
+.cover .rise { position: absolute; inset: 0 var(--pad-x); }
+.display {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--type-display); line-height: calc(3.5 * var(--baseline)); letter-spacing: 0; margin: 0;
+  margin-left: -0.052em;
+  margin-top: calc(9.5 * var(--baseline) - 1cap);
+  text-box: trim-both cap alphabetic;
+}
+.cover-sub { font-size: var(--type-small); line-height: var(--baseline); margin: 0;
+  position: absolute; left: 0; max-width: 768px;
+  top: calc(15.5 * var(--baseline) - 1cap);
+  text-box: trim-both cap alphabetic; }
+.cover-sub-a { left: 0; max-width: 360px; }
+.cover-sub-b { left: 432px; max-width: 816px; }
+.toc2 { display: grid; grid-template-columns: 816px 816px; column-gap: 48px; margin-top: calc(2.5 * var(--baseline)); }
+.toc2-col { display: flex; flex-direction: column; }
+.toc2-row { height: calc(2.5 * var(--baseline)); display: flex; align-items: baseline; gap: 36px; font-size: var(--type-subtitle); }
+.toc2-row .toc-num { font-size: var(--type-kicker); color: var(--color-accent); font-feature-settings: "tnum" 1; min-width: 48px; }
+.divider { justify-content: flex-start; background: var(--color-accent-900); color: var(--color-bg); }
+.divider .board { --board-rule: color-mix(in srgb, var(--color-bg) 9%, transparent); }
+.divider .board > .corner { color: color-mix(in srgb, var(--color-bg) 55%, transparent); }
+.divider .rise { position: absolute; inset: 0 var(--pad-x); }
+.page-corner { position: absolute; width: 15px; height: 15px; color: color-mix(in srgb, var(--color-bg) 55%, transparent); }
+.page-corner::before, .page-corner::after { content: ""; position: absolute; background: currentColor; }
+.page-corner::before { left: 7px; top: 0; width: 1px; height: 100%; }
+.page-corner::after  { top: 7px; left: 0; width: 100%; height: 1px; }
+.page-corner.tl { top: 41px; left: 41px; }
+.page-corner.tr { top: 41px; right: 41px; }
+.page-corner.bl { bottom: 41px; left: 41px; }
+.page-corner.br { bottom: 41px; right: 41px; }
+.board > .corner { position: absolute; width: 15px; height: 15px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+.board > .corner::before, .board > .corner::after { content: ""; position: absolute; background: currentColor; }
+.board > .corner::before { left: 7px; top: 0; width: 1px; height: 100%; }
+.board > .corner::after  { top: 7px; left: 0; width: 100%; height: 1px; }
+.board > .corner.tl { top: -8px; left: -8px; }
+.board > .corner.tr { top: -8px; right: -8px; }
+.board > .corner.bl { bottom: -8px; left: -8px; }
+.board > .corner.br { bottom: -8px; right: -8px; }
+.ghost-num {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 480px; line-height: 1; letter-spacing: 0;
+  color: var(--color-accent-700);
+  position: absolute; top: calc(12.5 * var(--baseline) - 1cap);
+  text-box: trim-both cap alphabetic;
+  margin-left: -0.036em;
+}
+.divider .slide-title { position: absolute; top: calc(17 * var(--baseline) - 1cap); }
+.content { padding-top: calc(5 * var(--baseline)); }
+.content > .slide-title { margin-top: -1cap; }
+.content > .bullets { margin-top: calc(2.5 * var(--baseline) - 1cap); }
+.bullets { display: flex; flex-direction: column; max-width: 1220px; margin: 0; padding: 0; list-style: none; font-size: var(--type-body); }
+.bullets li { position: relative; line-height: var(--baseline); text-box: trim-both cap alphabetic; }
+.bullets li + li { margin-top: calc(2.5 * var(--baseline) - 1cap); }
+.bullets li::before, .bullets li::after { content: ""; position: absolute; background: var(--color-accent); }
+.bullets li::before { left: -37px; top: calc(0.5cap - 8px); width: 2px; height: 16px; }
+.bullets li::after  { left: -44px; top: calc(0.5cap - 1px); width: 16px; height: 2px; }
+.cols { display: grid; column-gap: var(--baseline); margin-top: calc(2.5 * var(--baseline)); }
+.cols-2 { grid-template-columns: 816px 816px; }
+.cols-3 { grid-template-columns: repeat(3, 528px); }
+.cols-4 { grid-template-columns: repeat(4, 384px); }
+.cols h3 { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--type-subtitle); line-height: var(--baseline); margin: 0;
+  margin-top: -1cap;
+  text-box: trim-both cap alphabetic; }
+.cols p { font-size: var(--type-small); line-height: var(--baseline); margin: 0;
+  margin-top: calc(2 * var(--baseline) - 1cap);
+  text-box: trim-both cap alphabetic; }
+.cols ul { font-size: var(--type-small); line-height: var(--baseline); margin: calc(2 * var(--baseline) - 1cap) 0 0; padding: 0; list-style: none; }
+.cols ul li { text-box: trim-both cap alphabetic; }
+.cols ul li + li { margin-top: calc(1 * var(--baseline) - 1cap); padding-top: 0; }
+.split { flex-direction: row; align-items: flex-start; gap: 0; padding-top: calc(5 * var(--baseline)); }
+.split-copy { flex: none; width: 768px; display: flex; flex-direction: column; }
+.split-copy .slide-title { margin-top: -1cap; }
+.split-copy .note { font-size: var(--type-small); line-height: var(--baseline); margin: calc(2.5 * var(--baseline) - 1cap) 0 0;
+  text-box: trim-both cap alphabetic; max-width: 768px; }
+.split-figure { position: absolute; left: 984px; top: calc(5 * var(--baseline)); width: 816px; height: calc(14.5 * var(--baseline)); margin: 0; }
+.split-figure image-slot { width: 100%; height: 100%; }
+.split-figure > .corner { pointer-events: none; position: absolute; width: 15px; height: 15px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+.split-figure > .corner::before, .split-figure > .corner::after { content: ""; position: absolute; background: currentColor; }
+.split-figure > .corner::before { left: 7px; top: 0; width: 1px; height: 100%; }
+.split-figure > .corner::after { top: 7px; left: 0; width: 100%; height: 1px; }
+.split-figure > .corner.tl { top: -8px; left: -8px; }
+.split-figure > .corner.tr { top: -8px; right: -8px; }
+.split-figure > .corner.bl { bottom: -8px; left: -8px; }
+.split-figure > .corner.br { bottom: -8px; right: -8px; }
+.split .bullets { max-width: 744px; margin-top: calc(2.5 * var(--baseline) - 1cap); }
+.split .bullets li + li { margin-top: calc(1.5 * var(--baseline) - 1cap); }
+.split .exam-tip { right: 1000px; flex-direction: column; align-items: flex-start; gap: 14px; }
+.split .et-text { max-width: 744px; }
+.exam-tip { position: absolute; left: var(--pad-x); right: var(--pad-x); bottom: calc(var(--pad-bottom) + 1.75 * var(--baseline)); display: flex; align-items: baseline; gap: 28px; }
+.et-label { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: var(--type-kicker); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); white-space: nowrap; }
+.et-text { font-size: 25px; line-height: 32px; color: color-mix(in srgb, var(--color-text) 75%, transparent); max-width: 1400px; }
+.qcheck { display: grid; grid-template-columns: 816px 816px; column-gap: 48px; row-gap: 28px; margin-top: calc(0.5 * var(--baseline)); }
+.qa .q-ref { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: var(--type-kicker); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); margin: 0; }
+.qa .q-stem { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 31px; line-height: 37px; margin: 10px 0 0; }
+.qa .opts { margin: 14px 0 0; padding: 0; list-style: none; font-size: 24px; line-height: 30px; color: color-mix(in srgb, var(--color-text) 78%, transparent); display: flex; flex-direction: column; gap: 8px; }
+.qa .opts li { display: flex; gap: 16px; }
+.qa .ol { color: var(--color-accent-700); font-family: var(--font-heading); font-weight: var(--font-heading-weight); min-width: 26px; }
+.stat { display: grid; grid-template-columns: repeat(4, 384px); column-gap: 48px; margin-top: calc(2.5 * var(--baseline)); }
+.stat-num {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 72px; line-height: calc(1.5 * var(--baseline)); margin: 0;
+  color: var(--color-accent); font-feature-settings: "tnum" 1;
+  text-box: trim-both cap alphabetic;
+}
+.stat-cap { font-size: var(--type-small); line-height: var(--baseline); margin: calc(1.5 * var(--baseline) - 1cap) 0 0; text-box: trim-both cap alphabetic; }
+.process { display: flex; flex-direction: column; margin-top: calc(1.5 * var(--baseline)); max-width: 1680px; }
+.process-row { display: grid; grid-template-columns: 72px 1fr; column-gap: 36px; height: calc(1.5 * var(--baseline)); align-items: baseline; font-size: var(--type-small); }
+.process-num { font-family: var(--font-heading); font-weight: var(--font-heading-weight); color: var(--color-accent); font-feature-settings: "tnum" 1; font-size: var(--type-kicker); }
+.letters { display: flex; flex-direction: column; margin-top: calc(1.5 * var(--baseline)); max-width: 1680px; }
+.letters li { display: grid; grid-template-columns: 48px 1fr; column-gap: 28px; font-size: 26px; line-height: 36px; list-style: none; }
+.letters { margin: calc(1.5 * var(--baseline)) 0 0; padding: 0; }
+.letters li + li { margin-top: 10px; }
+.letters .ol { font-family: var(--font-heading); font-weight: var(--font-heading-weight); color: var(--color-accent); font-feature-settings: "tnum" 1; }
+@media (prefers-reduced-motion: no-preference) {
+  [data-deck-active] .rise { animation: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+}
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section class="slide cover" data-label="Title" data-speaker-notes="Welcome. Housekeeping, fire, toilets, phones. This is the CITB Site Safety Plus Temporary Works Supervisor Training Course, aligned to BS 5975:2024. Introductions next.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker k-right"><span>Site Safety Plus</span></div>
+    <div class="rise">
+      <h1 class="display"><span>Temporary Works</span><br /><span>Supervisor</span></h1>
+      <p class="cover-sub cover-sub-a text-muted">TWSTC · One-day course</p>
+      <p class="cover-sub cover-sub-b text-muted">The processes, roles and site controls that keep temporary works safe — aligned to BS 5975-1:2024 and BS 5975-2:2024.</p>
+    </div>
+    <div class="pin-bottom meta"><span>Target Zero Group</span><span>·</span><span>David John Miller MSc MICE CEng</span></div>
+  </section>
+
+  <section class="slide content" data-label="Introductions" data-speaker-notes="Go round the room. Listen for whether they have a TW procedure and whether they know their TWC — it tells you how to pitch the day.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>Introduction</span></div>
+    <h2 class="slide-title">Introductions</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Tell the room</h3>
+        <ul>
+          <li>Your name and job title</li>
+          <li>What you actually do on site</li>
+          <li>How long you have worked with temporary works</li>
+        </ul>
+      </div>
+      <div>
+        <h3>And this</h3>
+        <ul>
+          <li>Does your organisation have a TW procedure?</li>
+          <li>Do you know who your TWC is?</li>
+          <li>What TW have you signed, checked or loaded?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Course Aim" data-speaker-notes="Stress that this is a process course, not a design course, and that the certificate is not a competence ticket. The DI still has to judge them.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>Introduction</span></div>
+    <h2 class="slide-title">What This Course Is</h2>
+    <ul class="bullets rise">
+      <li>A process course on the role of the Temporary Works Supervisor — not a technical design course</li>
+      <li>Technical awareness is signposted throughout and must be used in the exercises</li>
+      <li>Attendance does not confer competence; the Designated Individual still has to judge education, training and experience</li>
+      <li>Training is an essential element of TWS competence — it is not the whole of it</li>
+    </ul>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Exam Format" data-speaker-notes="Walk this slowly. Notes are allowed for the whole paper. Pass is 19/25. Resit band is 15–18.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>Introduction</span></div>
+    <h2 class="slide-title">Course and Exam Format</h2>
+    <ul class="bullets rise">
+      <li>20 questions in 45 minutes — 17 multiple choice, 3 written answers</li>
+      <li>25 marks in total; pass mark is 19 out of 25 (76%)</li>
+      <li>15 to 18 marks (60–72%) earns a re-sit offer</li>
+      <li>You may use your notes for the entire examination</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Written questions carry the marks that often decide a pass. Answer in full sentences, not single words.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Contents">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <h2 class="slide-title">Contents</h2>
+    <div class="toc2 rise">
+      <div class="toc2-col">
+        <div class="toc2-row"><span class="toc-num">01</span><span class="toc-label">What are temporary works?</span></div>
+        <div class="toc2-row"><span class="toc-num">02</span><span class="toc-label">History, failures and the 4Cs</span></div>
+        <div class="toc2-row"><span class="toc-num">03</span><span class="toc-label">Who is involved</span></div>
+      </div>
+      <div class="toc2-col">
+        <div class="toc2-row"><span class="toc-num">04</span><span class="toc-label">Planning temporary works</span></div>
+        <div class="toc2-row"><span class="toc-num">05</span><span class="toc-label">Construction, erection, dismantling</span></div>
+        <div class="toc2-row"><span class="toc-num">06</span><span class="toc-label">Examination</span></div>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Three Roles">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>Frame for the day</span></div>
+    <h2 class="slide-title">The Three Roles</h2>
+    <div class="cols cols-3 rise">
+      <div>
+        <h3>DI</h3>
+        <p>The Designated Individual. Owns the organisation’s temporary works procedure and appoints the TWC.</p>
+      </div>
+      <div>
+        <h3>TWC</h3>
+        <p>The Temporary Works Co-ordinator. Owns co-ordination of all temporary works on the project.</p>
+      </div>
+      <div>
+        <h3>TWS</h3>
+        <p>The Temporary Works Supervisor. Assists the TWC with supervision, checking and permits on site.</p>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">All three exist in BS 5975. The TWS does not replace the TWC — they work to the TWC’s appointment.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="The 4Cs">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>Frame for the day</span></div>
+    <h2 class="slide-title">The 4Cs</h2>
+    <div class="cols cols-4 rise">
+      <div>
+        <h3>Competence</h3>
+        <p>People who know the limit of their own ability, and when to stop and ask.</p>
+      </div>
+      <div>
+        <h3>Co-ordination</h3>
+        <p>One picture of all temporary works, interfaces and sequence — owned by the TWC.</p>
+      </div>
+      <div>
+        <h3>Co-operation</h3>
+        <p>Designers, suppliers, subcontractors and the site team working to the same brief.</p>
+      </div>
+      <div>
+        <h3>Communication</h3>
+        <p>The brief, the drawings, the residual risks and the permit — actually reaching the people who build it.</p>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">The 4Cs are how failures are avoided. Memorise the four words exactly.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="The 3Ps">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>Frame for the day</span></div>
+    <h2 class="slide-title">The 3Ps</h2>
+    <div class="cols cols-3 rise">
+      <div>
+        <h3>People</h3>
+        <p>Competence, pressure, fatigue and the gap between progress and safety. People are fallible.</p>
+      </div>
+      <div>
+        <h3>Process</h3>
+        <p>The BS 5975 procedure: register, brief, design, check, inspect, permit, dismantle. Follow it.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <p>The kit. Product failure is rare unless it is damaged, second-hand, or used for the wrong job.</p>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Every temporary works failure traces to one or more of the 3Ps not working.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide divider" data-label="01 What are temporary works">
+    <i class="page-corner tl"></i><i class="page-corner tr"></i><i class="page-corner bl"></i><i class="page-corner br"></i>
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="rise">
+      <div class="ghost-num">01</div>
+      <h2 class="slide-title">What are temporary works?</h2>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Definition" data-speaker-notes="Get a volunteer to give the definition in their own words, then tighten it to the engineered-solution wording. This is Exam 1.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">A Working Definition</h2>
+    <ul class="bullets rise">
+      <li>An engineered solution used to support or protect a structure so that the permanent works can be built, altered or taken down</li>
+      <li>It also covers plant bases, excavations, access, site security, and works that only exist while construction is happening</li>
+      <li>If it is designed to be temporary, it is still a structure — and it can still kill people</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">“Describe what is meant by temporary works, and give one example.” Engineered solution + one concrete example.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="BS 5975 2024">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">BS 5975:2024</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Part 1 — Management</h3>
+        <p>Procedures for the control of temporary works. Roles, appointments, register, briefs, checking, permits and records. This is the TWS’s home document.</p>
+      </div>
+      <div>
+        <h3>Part 2 — Falsework</h3>
+        <p>Design and implementation of falsework. Technical rules that sit behind formwork, falsework and many of the site checks you will make.</p>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">The 2024 revision split the old single standard. Procedures live in Part 1; falsework design lives in Part 2.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Scope A to E">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">The Scope — A to E</h2>
+    <ol class="letters rise">
+      <li><span class="ol">A</span><span>Supporting or protecting an existing structure or the permanent works during construction, modification or demolition</span></li>
+      <li><span class="ol">B</span><span>Providing stability to the permanent structure — propping, shoring, façade retention</span></li>
+      <li><span class="ol">C</span><span>Securing a site, providing access, or segregating people and vehicles — hoarding, haul roads, fencing, stairs</span></li>
+      <li><span class="ol">D</span><span>Supporting or restraining plant, materials or equipment, including water-borne craft</span></li>
+      <li><span class="ol">E</span><span>Earthworks, excavation support, and temporary works to a watercourse</span></li>
+    </ol>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Scope F to I">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">The Scope — F to I</h2>
+    <ol class="letters rise">
+      <li><span class="ol">F</span><span>A safe platform for work on land or water — jetty, scaffold, edge protection, towers</span></li>
+      <li><span class="ol">G</span><span>Control of noise, dust, debris, fume, groundwater or discharges — screens, bunds, dewatering</span></li>
+      <li><span class="ol">H</span><span>Protection or support to services, and capacity testing</span></li>
+      <li><span class="ol">I</span><span>Facilitating testing — pressure testing pipes, pile testing, floor load tests, pre-demolition tests</span></li>
+    </ol>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Hoardings, piling mats, rebar cages and load tests are all temporary works. If it is engineered and temporary, it belongs on the register.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Seven Families">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">Seven Families</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>On every site</h3>
+        <ul>
+          <li>Site establishment — hoardings, roads, welfare, fencing</li>
+          <li>Access — scaffold, stairs, edge protection, nets</li>
+          <li>Formwork and falsework — including back-propping</li>
+          <li>Permanent works in a temporary state</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Often missed</h3>
+        <ul>
+          <li>Structural stability — needling, shoring, façade retention</li>
+          <li>Excavations — trenches, cofferdams, dewatering, shafts</li>
+          <li>Construction plant — crane bases, piling mats, hoist ties</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide split" data-label="Site Establishment">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="split-copy">
+      <div class="kicker"><span>01 · What are temporary works</span></div>
+      <h2 class="slide-title">Site Establishment</h2>
+      <ul class="bullets rise">
+        <li>All solid or sheeted hoardings are temporary works — they take wind</li>
+        <li>Heras, gates, flagpoles, cabins and haul roads belong on the register</li>
+        <li>Undesigned hoarding falling onto a pavement is a public fatality waiting</li>
+      </ul>
+    </div>
+    <figure class="split-figure blueprint duotone rise">
+      <image-slot id="photo-hoarding" shape="rect" placeholder="Drop a photo — sheeted hoarding, poorly strutted fence, or a blown panel"></image-slot>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </figure>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">CDM requires welfare and site security. Both are temporary works. Start the register there.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Ground and Haul Roads">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">Ground Is a Structure</h2>
+    <ul class="bullets rise">
+      <li>Do not assume a hard surface is competent — services, poor backfill and voids will overturn plant</li>
+      <li>A piling rig that breaks through a haul road is a temporary works failure, not “bad luck”</li>
+      <li>Any repair to a piling platform must go back to the platform designer</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">2003, LTS railway: a trench cut through a piling mat, poorly backfilled, rig overturned onto live 25 kV lines. Communication failed.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Scaffold and TG20">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">Scaffold and TG20:21</h2>
+    <ul class="bullets rise">
+      <li>Work at Height Regulations: calculate strength and stability unless the scaffold is a recognised standard configuration</li>
+      <li>TG20:21 is that recognised configuration — designed to BS EN 12811 and accepted by the HSE</li>
+      <li>Outside TG20 — loading bays, cantilever decks, lifted stairs, ties to weak façades — needs a design</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">A staircase that will be crane-lifted is not a TG20 standard scaffold. It needs a specific design.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Standard Solutions">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">Standard Solutions</h2>
+    <ul class="bullets rise">
+      <li>BS 5975 allows a “standard solution”: the basic design is already done, presented in a table, with no further structural calculations needed</li>
+      <li>It must state layout, loading, limitations, tolerances, and how to install and remove it</li>
+      <li>Used outside its stated limits, it is no longer a standard solution — it needs a design and a check</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">A trench box used to the supplier’s tabulated limits is a standard solution. A trench box used deeper, or next to a railway, is not.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide split" data-label="Falsework">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="split-copy">
+      <div class="kicker"><span>01 · What are temporary works</span></div>
+      <h2 class="slide-title">Formwork and Falsework</h2>
+      <ul class="bullets rise">
+        <li>Falsework supports other structures until they can support themselves</li>
+        <li>It is short-term, highly stressed, often built from used kit, and must be destressed under load</li>
+        <li>Top-restrained falsework has no lateral stability of its own — it leans on the permanent works</li>
+      </ul>
+    </div>
+    <figure class="split-figure blueprint duotone rise">
+      <image-slot id="photo-falsework" shape="rect" placeholder="Drop a photo — soffit falsework, column shutters, or a pour in progress"></image-slot>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </figure>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Concrete Pressure">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">What the Pour Does</h2>
+    <ul class="bullets rise">
+      <li>On single-sided shutters, a change of pour height, cement, temperature or rate can jump the concrete pressure</li>
+      <li>Corners and non-square angles concentrate load — they are high-risk details</li>
+      <li>A column shutter braced in one direction only will go over in the other</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">The TWS does not redesign the shutter. The TWS stops the pour if the site is outside the brief.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Plant and Cranes">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">Plant, Cranes and Mats</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>High-risk items</h3>
+        <ul>
+          <li>Tower crane bases and ties</li>
+          <li>Mobile and crawler crane outrigger foundations</li>
+          <li>Hoist and mast-climber ties</li>
+          <li>Piling mats to BRE 470</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Why they fail</h3>
+        <ul>
+          <li>Ground not as assumed</li>
+          <li>Unauthorised excavation through the mat</li>
+          <li>No designer involved in a repair</li>
+          <li>LOLER appointed person and TWC not talking</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide split" data-label="Excavations">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="split-copy">
+      <div class="kicker"><span>01 · What are temporary works</span></div>
+      <h2 class="slide-title">Excavations</h2>
+      <ul class="bullets rise">
+        <li>CDM Regulation 22 sits alongside Regulation 19 — all practicable steps, cost is not a defence</li>
+        <li>Services, water and a change of sequence are the usual reasons a trench design is abandoned on site</li>
+        <li>If you cannot build it as drawn, stop and go back to the designer</li>
+      </ul>
+    </div>
+    <figure class="split-figure blueprint duotone rise">
+      <image-slot id="photo-excavation" shape="rect" placeholder="Drop a photo — trench support, cofferdam, or an unsupported excavation"></image-slot>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </figure>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Structural Stability">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">Structural Stability</h2>
+    <div class="cols cols-3 rise">
+      <div>
+        <h3>Needling</h3>
+        <p>Carrying an opening. The beam, the packing and the sequence are all temporary works.</p>
+      </div>
+      <div>
+        <h3>Underpinning</h3>
+        <p>Deepening or restoring foundations in short bays. The open bay is the risk.</p>
+      </div>
+      <div>
+        <h3>Façade retention</h3>
+        <p>The structure already exists — old, out of plumb, unknown. Survey and monitor; do not treat it as falsework.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Permanent Works Temporary">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">Permanent Works, Temporarily</h2>
+    <ul class="bullets rise">
+      <li>A wall that is not tied at the top or sides is a sail — wind will take it</li>
+      <li>A rebar cage is a slender structure until it is cast. Frankley WTW, 2012: a 21 m cage collapsed onto two scissor lifts</li>
+      <li>Lifting precast, testing a floor, or pouring against a one-sided shutter are all temporary conditions of the permanent works</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Permanent works are “the structure that remains and is used when the project is handed over.” Until then they may still need TW.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="What Failure Costs">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · What are temporary works</span></div>
+    <h2 class="slide-title">What Failure Looks Like</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>On the site</h3>
+        <ul>
+          <li>Collapse of the temporary works</li>
+          <li>Collapse of the permanent works</li>
+          <li>Uncontrolled ingress of spoil or water</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Beyond the site</h3>
+        <ul>
+          <li>Adjacent buildings, rail, highway, utilities</li>
+          <li>Fatalities and serious injuries to the public</li>
+          <li>Prosecution of companies and named individuals</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Register Exercise" data-speaker-notes="Use the project photographs. Every group must include welfare and hoarding. Push them to separate design-check category from implementation risk.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · Exercise</span></div>
+    <h2 class="slide-title">Exercise — The Register</h2>
+    <ul class="bullets rise">
+      <li>Identify 20 to 25 temporary works on your chosen project</li>
+      <li>Give each item a design-check category (0, 1, 2 or 3) and an implementation risk (low, medium or high)</li>
+      <li>Say who checks the design, and who inspects on site</li>
+      <li>Every site needs welfare and security — they go on the register first</li>
+    </ul>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Knowledge Check 01" data-speaker-notes="Answers: Q1 written — engineered solution plus example. Q2 — D (all of them). Q3 — B. Q4 — C.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>01 · Knowledge check</span></div>
+    <h2 class="slide-title">Knowledge Check</h2>
+    <div class="qcheck rise">
+      <div class="qa">
+        <p class="q-ref">Written · Exam 1</p>
+        <p class="q-stem">Describe what is meant by temporary works, and give one example.</p>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Identify</p>
+        <p class="q-stem">Which of these is temporary works?</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Sheeted hoarding to a pavement</span></li>
+          <li><span class="ol">B</span><span>A piling mat</span></li>
+          <li><span class="ol">C</span><span>A rebar cage before it is cast</span></li>
+          <li><span class="ol">D</span><span>All of the above</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Standard solutions</p>
+        <p class="q-stem">A standard solution needs no further structural calculations when:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>The TWS says it looks familiar</span></li>
+          <li><span class="ol">B</span><span>It is used within the supplier’s stated limits</span></li>
+          <li><span class="ol">C</span><span>It has been used on the last three jobs</span></li>
+          <li><span class="ol">D</span><span>The TWC is on holiday</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Permanent works</p>
+        <p class="q-stem">Which most accurately describes permanent works?</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Anything made of concrete</span></li>
+          <li><span class="ol">B</span><span>Works that do not need a permit</span></li>
+          <li><span class="ol">C</span><span>The structure that remains and is used at handover</span></li>
+          <li><span class="ol">D</span><span>Works designed by the Principal Designer only</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide divider" data-label="02 History and failures">
+    <i class="page-corner tl"></i><i class="page-corner tr"></i><i class="page-corner bl"></i><i class="page-corner br"></i>
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="rise">
+      <div class="ghost-num">02</div>
+      <h2 class="slide-title">History, failures and the 4Cs</h2>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Alexandra Dock">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>02 · History</span></div>
+    <h2 class="slide-title">Alexandra Dock, 1909</h2>
+    <div class="stat rise">
+      <div>
+        <p class="stat-num">39</p>
+        <p class="stat-cap">Men killed when trench timbers collapsed at Newport’s South Lock.</p>
+      </div>
+      <div>
+        <p class="stat-num">46</p>
+        <p class="stat-cap">Buried. Some crushed; others drowned as the tide ran into the trench.</p>
+      </div>
+      <div>
+        <p class="stat-num">1909</p>
+        <p class="stat-cap">Still the UK’s worst construction accident — and it was temporary works.</p>
+      </div>
+      <div>
+        <p class="stat-num">0</p>
+        <p class="stat-cap">Warning. The timbering “went without warning” in the afternoon.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="The 1970s">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>02 · History</span></div>
+    <h2 class="slide-title">The Collapses That Wrote the Rules</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Cleddau Bridge, 1970</h3>
+        <p>Cantilever construction. Design and sequence. Four dead.</p>
+        <h3>Birling Road, 1971</h3>
+        <p>Birdcage falsework, 1,200 tonnes of wet concrete. One dead, five seriously injured.</p>
+      </div>
+      <div>
+        <h3>Koblenz Rhine, 1971</h3>
+        <p>Falsework. Thirteen dead. Lessons on stability and load.</p>
+        <h3>Loddon Viaduct, 1972</h3>
+        <p>Falsework during the pour. Inadequate bracing. Three dead, ten injured.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Bragg Report">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>02 · History</span></div>
+    <h2 class="slide-title">The Bragg Report, 1975</h2>
+    <ul class="bullets rise">
+      <li>Twenty-seven recommendations, most of them now inside BS 5975</li>
+      <li>Appoint a properly qualified Falsework Co-ordinator — the origin of the TWC</li>
+      <li>All falsework designed; RIDDOR reporting of collapses; trained operatives; periodic inspection</li>
+      <li>Lateral stability in all directions; overall factor of safety not less than 2; design for actual erection tolerances and second-hand equipment</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Bragg, 1975. The TWC starts here. Factor of safety ? 2. Lateral stability in all directions.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="BS 5975 Timeline">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>02 · History</span></div>
+    <h2 class="slide-title">From Bragg to 2024</h2>
+    <div class="process rise">
+      <div class="process-row"><span class="process-num">1975</span><span>Bragg. Appoint a Falsework Co-ordinator. Design everything. Inspect it.</span></div>
+      <div class="process-row"><span class="process-num">1982</span><span>First BS 5975. The British Standard Bragg asked for.</span></div>
+      <div class="process-row"><span class="process-num">1996</span><span>Revision. Procedure starts to sit beside the technical rules.</span></div>
+      <div class="process-row"><span class="process-num">2008</span><span>Falsework Co-ordinator renamed Temporary Works Co-ordinator. Activities listed.</span></div>
+      <div class="process-row"><span class="process-num">2011</span><span>Further procedural tightening after more site failures.</span></div>
+      <div class="process-row"><span class="process-num">2019</span><span>Single code: procedures plus permissible-stress falsework. About 15% process, 85% technical.</span></div>
+      <div class="process-row"><span class="process-num">2024</span><span>Split. Part 1 management procedures. Part 2 falsework design and implementation.</span></div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Causes of Failure">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>02 · Failures</span></div>
+    <h2 class="slide-title">Why Temporary Works Fail</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Before it gets to site</h3>
+        <ul>
+          <li>No procedure, or a procedure nobody uses</li>
+          <li>No TWC appointed</li>
+          <li>Inadequate investigation of ground, services, adjacent buildings</li>
+          <li>No brief, no design, or no independent check</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Once it is on site</h3>
+        <ul>
+          <li>Site unaware of the design assumptions</li>
+          <li>Unauthorised changes</li>
+          <li>Overloading, or the wrong kit used because it was “what we had”</li>
+          <li>No check of erection; no lateral stability; poor foundations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Avoiding Failure">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>02 · Failures</span></div>
+    <h2 class="slide-title">Avoiding Failure</h2>
+    <ul class="bullets rise">
+      <li>People — a competent TWC who knows their limit, and a TWS who will stop the job</li>
+      <li>Process — BS 5975 followed, not laminated and ignored</li>
+      <li>Product — the specified kit, within its limits, undamaged</li>
+      <li>The 4Cs hold the three together: competence, co-ordination, co-operation, communication</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Research has put about half of catastrophic events down to temporary works. The 4Cs are the avoidance technique the syllabus asks for.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Knowledge Check 02" data-speaker-notes="Answers: Q1 B. Q2 A. Q3 D. Q4 C.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>02 · Knowledge check</span></div>
+    <h2 class="slide-title">Knowledge Check</h2>
+    <div class="qcheck rise">
+      <div class="qa">
+        <p class="q-ref">History</p>
+        <p class="q-stem">The Bragg Report was published in:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>1970</span></li>
+          <li><span class="ol">B</span><span>1975</span></li>
+          <li><span class="ol">C</span><span>1982</span></li>
+          <li><span class="ol">D</span><span>2019</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">3Ps</p>
+        <p class="q-stem">The cause of a temporary works failure always traces to:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>People, process or product</span></li>
+          <li><span class="ol">B</span><span>Wind, water or ground</span></li>
+          <li><span class="ol">C</span><span>The Principal Designer</span></li>
+          <li><span class="ol">D</span><span>Second-hand equipment only</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">4Cs</p>
+        <p class="q-stem">Which set is the 4Cs?</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Cost, control, checking, competence</span></li>
+          <li><span class="ol">B</span><span>Client, contractor, co-ordinator, checker</span></li>
+          <li><span class="ol">C</span><span>Concrete, crane, cofferdam, column</span></li>
+          <li><span class="ol">D</span><span>Competence, co-ordination, co-operation, communication</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Bragg</p>
+        <p class="q-stem">Bragg required the overall factor of safety for falsework to be:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Not less than 1.2</span></li>
+          <li><span class="ol">B</span><span>Not less than 1.5</span></li>
+          <li><span class="ol">C</span><span>Not less than 2</span></li>
+          <li><span class="ol">D</span><span>Whatever the TWC decides</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide divider" data-label="03 Who is involved">
+    <i class="page-corner tl"></i><i class="page-corner tr"></i><i class="page-corner bl"></i><i class="page-corner br"></i>
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="rise">
+      <div class="ghost-num">03</div>
+      <h2 class="slide-title">Who is involved</h2>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Legislation">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">The Legal Frame</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Always in play</h3>
+        <ul>
+          <li>Health and Safety at Work etc. Act 1974</li>
+          <li>Management of Health and Safety at Work Regulations 1999</li>
+          <li>CDM 2015 — duty holders and Regulation 19</li>
+          <li>Corporate Manslaughter Act 2007 — first case involved temporary works</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Often in play</h3>
+        <ul>
+          <li>Work at Height Regulations 2005</li>
+          <li>LOLER 1998 — appointed person and TWC must talk</li>
+          <li>PUWER 1998</li>
+          <li>BS 5975 is a code of practice, not a statute — the law still bites</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Regulation 19">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">CDM Regulation 19</h2>
+    <ul class="bullets rise">
+      <li>All practicable steps to ensure a new or existing structure does not collapse if it may become unstable, or is in a temporary state of weakness</li>
+      <li>Any temporary support must be designed, installed and maintained for foreseeable loads, and used only for the purpose it was designed for</li>
+      <li>A structure must not be so loaded as to render it unsafe to any person</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">“All practicable steps” is not SFAIRP. Cost is not a factor under Regulations 19 and 22.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Principles of Prevention">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">Principles of Prevention</h2>
+    <div class="cols cols-3 rise">
+      <div>
+        <h3>First</h3>
+        <p>Avoid the risk. The best temporary works scheme is the one you do not need.</p>
+      </div>
+      <div>
+        <h3>Then</h3>
+        <p>Evaluate what remains. Combat it at source. Adapt the work. Replace the dangerous.</p>
+      </div>
+      <div>
+        <h3>Always</h3>
+        <p>Collective protection before PPE. Give people the instructions they actually need.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Designated Individual">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">The Designated Individual</h2>
+    <ul class="bullets rise">
+      <li>A senior person, usually reporting to the board, who owns the organisation’s temporary works procedure</li>
+      <li>Every organisation involved in temporary works should appoint a DI</li>
+      <li>The DI appoints the TWC, makes TWS available, and checks that firms they employ have an adequate procedure of their own</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">The DI is procedural management — not the person signing permits on a Saturday.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="TWC and PC TWC">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">TWC and PC TWC</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Every project needs a TWC</h3>
+        <p>Competence assessed. Deputy appointed for absence. Scope of the appointment written down. The DI makes the appointment.</p>
+      </div>
+      <div>
+        <h3>The PC TWC</h3>
+        <p>The Principal Contractor’s TWC has overall responsibility for co-ordinating all temporary works on the site — whether built by the PC or by a subcontractor.</p>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">PC TWC = overall co-ordination of all TW on the site. That is a frequent exam answer.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="The TWS">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">The Temporary Works Supervisor</h2>
+    <ul class="bullets rise">
+      <li>Appointed, where required, to assist the TWC with supervision and checking of construction and use against the design</li>
+      <li>Works within a written appointment — including which permits they may sign</li>
+      <li>Stops the work when the site is not as drawn, and tells the TWC</li>
+      <li>Does not become the TWC by being on site when the TWC is not</li>
+    </ul>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Visible Leadership">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">Visible Leadership</h2>
+    <ul class="bullets rise">
+      <li>Under CDM 2015, principal contractors show leadership through the actions of their managers</li>
+      <li>That means setting standards for temporary works practice — and following them themselves</li>
+      <li>A manager who walks past an unsigned permit has just set the standard</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">PC visible leadership: setting standards for TW practice and providing an example by following them.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Designers">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">Who Designs It</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>The cast</h3>
+        <ul>
+          <li>Permanent Works Designer</li>
+          <li>Temporary Works Designer — in-house, supplier or consultant</li>
+          <li>Principal Designer — co-operate, co-ordinate, pass information</li>
+        </ul>
+      </div>
+      <div>
+        <h3>The TWS need</h3>
+        <ul>
+          <li>A brief that includes residual risks from the PWD</li>
+          <li>Drawings that can be built</li>
+          <li>A named checker, at the right category</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Three designer competencies to evidence: skills, knowledge and experience. Attitude, training and behaviours are also accepted.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Guidance Bodies">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Who is involved</span></div>
+    <h2 class="slide-title">Where Else to Look</h2>
+    <div class="cols cols-4 rise">
+      <div>
+        <h3>TWf</h3>
+        <p>Temporary Works Forum. Topic papers and good practice.</p>
+      </div>
+      <div>
+        <h3>CROSS</h3>
+        <p>Confidential reporting on structural safety. Alerts from real failures.</p>
+      </div>
+      <div>
+        <h3>CIRIA</h3>
+        <p>C703 crane stability, C654 tower cranes, excavation and platform guides.</p>
+      </div>
+      <div>
+        <h3>PAS 8811 / 8812</h3>
+        <p>Scaffold specification and temporary works application — next to BS 5975.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Knowledge Check 03" data-speaker-notes="Answers: Q1 C. Q2 D. Q3 B. Q4 A.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>03 · Knowledge check</span></div>
+    <h2 class="slide-title">Knowledge Check</h2>
+    <div class="qcheck rise">
+      <div class="qa">
+        <p class="q-ref">CDM</p>
+        <p class="q-stem">Principal contractors show visible leadership by:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Issuing more PPE</span></li>
+          <li><span class="ol">B</span><span>Leaving temporary works to the subcontractor</span></li>
+          <li><span class="ol">C</span><span>Setting TW standards and following them</span></li>
+          <li><span class="ol">D</span><span>Appointing a TWS instead of a TWC</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">PC TWC</p>
+        <p class="q-stem">The PC TWC is responsible for:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Only the PC’s own falsework</span></li>
+          <li><span class="ol">B</span><span>Designing every item on the register</span></li>
+          <li><span class="ol">C</span><span>The organisation’s company procedure</span></li>
+          <li><span class="ol">D</span><span>Co-ordinating all temporary works on the site</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Reg 19</p>
+        <p class="q-stem">“All practicable steps” under CDM Reg 19 means:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Cost can be balanced against risk</span></li>
+          <li><span class="ol">B</span><span>Cost is not a factor</span></li>
+          <li><span class="ol">C</span><span>Only reasonably practicable steps</span></li>
+          <li><span class="ol">D</span><span>The TWS decides what is enough</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">DI</p>
+        <p class="q-stem">The Designated Individual:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Owns the organisation’s TW procedure and appoints the TWC</span></li>
+          <li><span class="ol">B</span><span>Must be based on the project full time</span></li>
+          <li><span class="ol">C</span><span>Signs every permit to load</span></li>
+          <li><span class="ol">D</span><span>Is the same person as the Principal Designer</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide divider" data-label="04 Planning">
+    <i class="page-corner tl"></i><i class="page-corner tr"></i><i class="page-corner bl"></i><i class="page-corner br"></i>
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="rise">
+      <div class="ghost-num">04</div>
+      <h2 class="slide-title">Planning temporary works</h2>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Control Process">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>04 · Planning</span></div>
+    <h2 class="slide-title">The Control Process</h2>
+    <div class="process rise">
+      <div class="process-row"><span class="process-num">01</span><span>Identify temporary works at tender. Open the register.</span></div>
+      <div class="process-row"><span class="process-num">02</span><span>DI appoints a competent TWC. TWS appointed and recorded.</span></div>
+      <div class="process-row"><span class="process-num">03</span><span>Classify each item: design-check category and implementation risk.</span></div>
+      <div class="process-row"><span class="process-num">04</span><span>Write the design brief. Include residual risks from the permanent works.</span></div>
+      <div class="process-row"><span class="process-num">05</span><span>Design, check to the required category, issue the certificate.</span></div>
+      <div class="process-row"><span class="process-num">06</span><span>RAMS and ITP produced, briefed and understood.</span></div>
+      <div class="process-row"><span class="process-num">07</span><span>Inspect. Permit to load. Use. Inspect. Permit to strike. Record. Feed back.</span></div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="The Register">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>04 · Planning</span></div>
+    <h2 class="slide-title">The Temporary Works Register</h2>
+    <ul class="bullets rise">
+      <li>The live picture of every item: description, category, risk, designer, checker, brief date, certificates, permits, inspections</li>
+      <li>Owned by the TWC and kept current through the life of the project — it is not a filing exercise at the end</li>
+      <li>If it is not on the register, it will not be briefed, checked or permitted</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">The register is the TWC’s instrument. The TWS helps keep the site columns honest — inspections, permits, as-built conditions.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Design Brief">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>04 · Planning</span></div>
+    <h2 class="slide-title">The Design Brief</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Must include</h3>
+        <ul>
+          <li>Permanent works drawings and residual risks</li>
+          <li>Site constraints, geology, services, neighbours</li>
+          <li>Sequence, plant, access, and when it comes out</li>
+          <li>Client, rail, highway or licence conditions</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Why it matters</h3>
+        <ul>
+          <li>A thin brief buys a thin design</li>
+          <li>Write it early enough for design, check, approval and procurement</li>
+          <li>The TWC drafts it with the site team — the TWS knows the constraints</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Two Axes">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>04 · Planning</span></div>
+    <h2 class="slide-title">Two Classifications, Not One</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Design-check category</h3>
+        <p>How complex is the design? Who is independent enough to check it? Categories 0, 1, 2 and 3. This is not site risk.</p>
+      </div>
+      <div>
+        <h3>Implementation risk</h3>
+        <p>What happens on site if it goes wrong? Low, medium or high. This drives supervision, inspection and who may sign the permit.</p>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">A simple design can still be high implementation risk — a standard hoarding over a live pavement. Do not mix the two axes.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Check Categories">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>04 · Planning</span></div>
+    <h2 class="slide-title">Design Check Categories</h2>
+    <div class="cols cols-4 rise">
+      <div>
+        <h3>Cat 0</h3>
+        <p>Standard solution. No further calculations. Check by another member of the site or design team.</p>
+      </div>
+      <div>
+        <h3>Cat 1</h3>
+        <p>Simple design. Check by another member of the design team.</p>
+      </div>
+      <div>
+        <h3>Cat 2</h3>
+        <p>More complex. Independent checker — same organisation is acceptable if independent of the design.</p>
+      </div>
+      <div>
+        <h3>Cat 3</h3>
+        <p>Complex or unusual. Checker from a different organisation.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Implementation Risk">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>04 · Planning</span></div>
+    <h2 class="slide-title">Implementation Risk</h2>
+    <div class="cols cols-3 rise">
+      <div>
+        <h3>Low</h3>
+        <p>Well understood, limited harm if it fails. An authorised TWS may often confirm the installation.</p>
+      </div>
+      <div>
+        <h3>Medium</h3>
+        <p>More to get wrong, and more to hit. Closer supervision. TWC involvement on the permit.</p>
+      </div>
+      <div>
+        <h3>High</h3>
+        <p>Significant harm to people or assets — crane bases, façade retention, deep excavations beside live rail. TWC does not delegate lightly.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Hierarchy">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>04 · Planning</span></div>
+    <h2 class="slide-title">Eliminate, Reduce, Inform, Control</h2>
+    <ul class="bullets rise">
+      <li>Eliminate — the best scheme is no temporary works</li>
+      <li>Reduce — the designer uses skill to cut residual risk</li>
+      <li>Inform — whatever remains is marked on the drawings, not buried in a note</li>
+      <li>Control — the site team, including the TWS, then manages what is left</li>
+    </ul>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Knowledge Check 04" data-speaker-notes="Answers: Q1 B. Q2 D. Q3 C. Q4 A.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>04 · Knowledge check</span></div>
+    <h2 class="slide-title">Knowledge Check</h2>
+    <div class="qcheck rise">
+      <div class="qa">
+        <p class="q-ref">Category</p>
+        <p class="q-stem">A Category 3 design check must be carried out by:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>The TWS</span></li>
+          <li><span class="ol">B</span><span>A checker from a different organisation</span></li>
+          <li><span class="ol">C</span><span>The same engineer who did the design</span></li>
+          <li><span class="ol">D</span><span>Anyone on site with a ticket</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Two axes</p>
+        <p class="q-stem">Implementation risk classification is:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>The same thing as the design-check category</span></li>
+          <li><span class="ol">B</span><span>Only used for falsework</span></li>
+          <li><span class="ol">C</span><span>Set by the Principal Designer</span></li>
+          <li><span class="ol">D</span><span>Site risk — low, medium or high — independent of design complexity</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Brief</p>
+        <p class="q-stem">A good design brief is written:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>After the kit has been delivered</span></li>
+          <li><span class="ol">B</span><span>Only for Category 3 items</span></li>
+          <li><span class="ol">C</span><span>In time for design, check, approval and procurement</span></li>
+          <li><span class="ol">D</span><span>By the TWS on the morning of the pour</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Hierarchy</p>
+        <p class="q-stem">The first move in temporary works design is to:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Eliminate the need for temporary works</span></li>
+          <li><span class="ol">B</span><span>Specify the heaviest proprietary system</span></li>
+          <li><span class="ol">C</span><span>Add more props</span></li>
+          <li><span class="ol">D</span><span>Write a longer method statement</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide divider" data-label="05 Construction">
+    <i class="page-corner tl"></i><i class="page-corner tr"></i><i class="page-corner bl"></i><i class="page-corner br"></i>
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="rise">
+      <div class="ghost-num">05</div>
+      <h2 class="slide-title">Construction, erection, dismantling</h2>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Before You Start">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>05 · On site</span></div>
+    <h2 class="slide-title">Before Anyone Lifts a Tube</h2>
+    <ul class="bullets rise">
+      <li>Design received, checked and on site — the issue that will actually be built</li>
+      <li>Conditions and materials inspected; damaged or substitute kit rejected</li>
+      <li>RAMS and ITP briefed to the people doing the work, not just signed in a cabin</li>
+      <li>Any deviation already approved — not “we will catch it later”</li>
+    </ul>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Permits">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>05 · On site</span></div>
+    <h2 class="slide-title">Permit to Load, Permit to Strike</h2>
+    <ul class="bullets rise">
+      <li>The permit brings the works into use, and takes them out of use</li>
+      <li>It confirms the works are installed as designed, are safe to load or dismantle, and that prior checks are complete</li>
+      <li>Dismantling follows the designer’s sequence — which is not always the reverse of erection</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">When the TWC signs the permit to load, they confirm the works have been installed as required by the design.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Who Signs">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>05 · On site</span></div>
+    <h2 class="slide-title">Who Confirms Installation</h2>
+    <ul class="bullets rise">
+      <li>The TWC is responsible for confirming that temporary works have been installed as required by the design before loading</li>
+      <li>The TWC may delegate that confirmation to an authorised TWS — typically for lower-risk items, and only within the appointment</li>
+      <li>The TWS does not confirm installation on their own authority, and the designer does not do it by telephone</li>
+    </ul>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Correct answer: TWC, who may delegate to the authorised TWS for low-risk works. Not “TWS without reference to anyone”.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="ITP">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>05 · On site</span></div>
+    <h2 class="slide-title">Inspections and the ITP</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>What the ITP is for</h3>
+        <p>To verify that the works are constructed in accordance with the certified design. Hold points, acceptance criteria, who signs.</p>
+      </div>
+      <div>
+        <h3>Periodic inspections</h3>
+        <p>Required for items that stay in place — hoardings, crane bases, cofferdams, gantries, piling mats. CDM still applies after the permit.</p>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">Main purpose of an ITP: make sure the works are constructed in accordance with the certified design.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Changes">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>05 · On site</span></div>
+    <h2 class="slide-title">When the Site Is Not as Drawn</h2>
+    <ul class="bullets rise">
+      <li>Unauthorised change is one of the main causes of failure</li>
+      <li>Stop. Tell the TWC. Go back to the designer. Do not “make it work” with what is on the wagon</li>
+      <li>A repair to a piling mat, a missing tie, a pour that will go higher — all of these reopen the brief</li>
+    </ul>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide split" data-label="Dismantling">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="split-copy">
+      <div class="kicker"><span>05 · On site</span></div>
+      <h2 class="slide-title">Dismantling</h2>
+      <ul class="bullets rise">
+        <li>You have as much chance of a collapse taking it down as putting it up</li>
+        <li>The method statement must include a dismantling sequence, briefed and followed</li>
+        <li>That sequence is set by the designer — not invented on the last Friday</li>
+      </ul>
+    </div>
+    <figure class="split-figure blueprint duotone rise">
+      <image-slot id="photo-dismantle" shape="rect" placeholder="Drop a photo — falsework being struck, or a façade frame coming down in sequence"></image-slot>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    </figure>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Records">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>05 · On site</span></div>
+    <h2 class="slide-title">Records and Feedback</h2>
+    <ul class="bullets rise">
+      <li>Appointments, briefs, certificates, permits, inspections, deviations — kept and maintained</li>
+      <li>Feed back to the permanent works designer and the Principal Designer where the temporary condition taught something</li>
+      <li>If it is not recorded, the organisation will repeat it</li>
+    </ul>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Knowledge Check 05" data-speaker-notes="Answers: Q1 D. Q2 C. Q3 B. Q4 A / skills knowledge experience.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>05 · Knowledge check</span></div>
+    <h2 class="slide-title">Knowledge Check</h2>
+    <div class="qcheck rise">
+      <div class="qa">
+        <p class="q-ref">Permit</p>
+        <p class="q-stem">Who confirms the works are installed as designed before loading?</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>The TWS, without reference to anyone else</span></li>
+          <li><span class="ol">B</span><span>The designer, by telephone to the TWC</span></li>
+          <li><span class="ol">C</span><span>Only the TWC, who must physically check every item</span></li>
+          <li><span class="ol">D</span><span>The TWC, who may delegate to an authorised TWS for low-risk works</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">ITP</p>
+        <p class="q-stem">The main purpose of an inspection and test plan is to:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>Satisfy the client’s quantity surveyor</span></li>
+          <li><span class="ol">B</span><span>Replace the need for a design check</span></li>
+          <li><span class="ol">C</span><span>Verify construction against the certified design</span></li>
+          <li><span class="ol">D</span><span>Record hours for the TWS</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Dismantling</p>
+        <p class="q-stem">Temporary works should be dismantled:</p>
+        <ul class="opts">
+          <li><span class="ol">A</span><span>As quickly as possible once the pour has gone off</span></li>
+          <li><span class="ol">B</span><span>In accordance with the designer’s specified sequence</span></li>
+          <li><span class="ol">C</span><span>Always in reverse of erection</span></li>
+          <li><span class="ol">D</span><span>Without a permit, because the risk has passed</span></li>
+        </ul>
+      </div>
+      <div class="qa">
+        <p class="q-ref">Written</p>
+        <p class="q-stem">Name three competencies a designer must evidence so the work can secure health and safety.</p>
+      </div>
+    </div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide content" data-label="Exam Preparation" data-speaker-notes="Run the written topics once more. Notes are allowed — but they have to be able to find the answer in 45 minutes.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker"><span>Revision</span></div>
+    <h2 class="slide-title">Before the Paper</h2>
+    <div class="cols cols-2 rise">
+      <div>
+        <h3>Written answers to have ready</h3>
+        <ul>
+          <li>What temporary works are, plus one example</li>
+          <li>The 4Cs, and the 3Ps</li>
+          <li>Three designer competencies</li>
+          <li>Why we inspect before we load</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Do not confuse</h3>
+        <ul>
+          <li>Design-check category and implementation risk</li>
+          <li>TWS and TWC — and who may sign</li>
+          <li>SFAIRP and “all practicable steps”</li>
+          <li>Standard solution and “we have used it before”</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exam-tip"><span class="et-label">Exam pointer</span><span class="et-text">20 questions, 25 marks, 45 minutes. 19 to pass. Notes allowed throughout. Attempt every written question.</span></div>
+    <div class="page-foot" aria-hidden="true"></div>
+  </section>
+
+  <section class="slide cover" data-label="Close" data-speaker-notes="Hand out the papers. 45 minutes. Remain available for reading queries, not for answers. Collect papers. Course appraisal.">
+    <div class="board" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+    <div class="kicker k-right"><span>Site Safety Plus</span></div>
+    <div class="rise">
+      <h2 class="display">Good luck</h2>
+      <p class="cover-sub text-muted">20 questions · 45 minutes · 19 out of 25 to pass. Notes may be used for the entire paper.</p>
+    </div>
+    <div class="pin-bottom meta"><span>Target Zero Group</span><span>·</span><span>TWSTC</span></div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>
